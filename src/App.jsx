@@ -4,9 +4,13 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { TodoItem } from "./components/TodoItem";
 import { AddTodoInput } from "./components/AddTodoInput";
+import { Filter } from "./components/Filter";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [filteredTodos, setFilteredTodos] = useState([]);
+
+  const todoList = filteredTodos.length ? filteredTodos : todos;
 
   function handleAddNewTodoItem(description) {
     setTodos((todos) => [
@@ -36,13 +40,22 @@ function App() {
     setTodos(newTodos);
   }
 
+  function handleFilter(description) {
+    const newFilteredTodos = todos.filter((todo) =>
+      todo.description.includes(description)
+    );
+
+    setFilteredTodos(newFilteredTodos);
+  }
+
   return (
     <>
       <h1>Todo List</h1>
 
+      <Filter onFilterChange={handleFilter} />
       <AddTodoInput onAddItem={handleAddNewTodoItem} />
 
-      {todos.map((todo) => (
+      {todoList.map((todo) => (
         <TodoItem
           key={todo.id}
           id={todo.id}
