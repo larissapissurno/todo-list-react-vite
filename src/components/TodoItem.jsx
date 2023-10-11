@@ -8,7 +8,9 @@ import {
 
 /**
  * @typedef {Object} TodoItemProps
+ * @property {number} id
  * @property {string} description
+ * @property {function} onEditItem
  *
  * @param {TodoItemProps} props
  */
@@ -32,6 +34,8 @@ export function TodoItem(props) {
      * para que o input de texto seja escondido
      */
     setIsEditing(false);
+
+    props.onEditItem(props.id, description);
   }
 
   function handleDescriptionChange(event) {
