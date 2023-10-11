@@ -45,6 +45,7 @@ function App() {
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
+          id={todo.id}
           description={todo.description}
           onEditItem={handleEditItem}
         />
