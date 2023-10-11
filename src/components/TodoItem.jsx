@@ -4,6 +4,7 @@ import {
   Container,
   Description,
   TextInput,
+  ButtonDelete,
 } from "./TodoItem.styled";
 
 /**
@@ -11,6 +12,7 @@ import {
  * @property {number} id
  * @property {string} description
  * @property {function} onEditItem
+ * @property {function} onDeleteItem
  *
  * @param {TodoItemProps} props
  */
@@ -36,6 +38,10 @@ export function TodoItem(props) {
     setIsEditing(false);
 
     props.onEditItem(props.id, description);
+  }
+
+  function handleDeleteClick() {
+    props.onDeleteItem(props.id);
   }
 
   function handleDescriptionChange(event) {
@@ -77,6 +83,8 @@ export function TodoItem(props) {
         {!isEditing && <button onClick={handleEditClick}>Edit</button>}
 
         {isEditing && <button onClick={handleSaveClick}>Save</button>}
+
+        <ButtonDelete onClick={handleDeleteClick}>Delete</ButtonDelete>
       </div>
     </Container>
   );

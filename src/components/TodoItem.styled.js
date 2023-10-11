@@ -54,3 +54,7 @@ export const TextInput = styled.input`
 
   outline: none; // remove o contorno ao clicar no input
 `;
+
+export const ButtonDelete = styled.button`
+  background-color: #f44336;
+`;
