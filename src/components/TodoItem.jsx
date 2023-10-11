@@ -59,7 +59,7 @@ export function TodoItem(props) {
 
       <div className="description">
         {!isEditing && (
-          <Description isCompleted={isCompleted}>
+          <Description state={isCompleted ? "completed" : "non-completed"}>
             {props.description}
           </Description>
         )}

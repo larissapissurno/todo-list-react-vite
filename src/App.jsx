@@ -43,7 +43,11 @@ function App() {
       <AddTodoInput onAddItem={handleAddNewTodoItem} />
 
       {todos.map((todo) => (
-        <TodoItem description={todo.description} onEditItem={handleEditItem} />
+        <TodoItem
+          key={todo.id}
+          description={todo.description}
+          onEditItem={handleEditItem}
+        />
       ))}
     </>
   );
