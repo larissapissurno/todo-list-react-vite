@@ -38,3 +38,7 @@ export const CheckboxInput = styled.input`
 
   cursor: pointer;
 `;
+
+export const Description = styled.span`
+  text-decoration: ${(props) => (props.isCompleted ? "line-through" : "none")};
+`;
