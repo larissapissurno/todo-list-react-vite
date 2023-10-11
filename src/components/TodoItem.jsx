@@ -14,6 +14,7 @@ import {
  */
 export function TodoItem(props) {
   const [isEditing, setIsEditing] = useState(false);
+  const [description, setDescription] = useState(props.description);
 
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -33,6 +34,14 @@ export function TodoItem(props) {
     setIsEditing(false);
   }
 
+  function handleDescriptionChange(event) {
+    /**
+     * atualiza o estado de description para o valor do input de texto
+     * para que o input de texto seja atualizado em tempo real
+     */
+    setDescription(event.target.value);
+  }
+
   return (
     <Container>
       <div className="checkbox">
@@ -49,6 +58,14 @@ export function TodoItem(props) {
           <Description isCompleted={isCompleted}>
             {props.description}
           </Description>
+        )}
+
+        {isEditing && (
+          <TextInput
+            type="text"
+            value={description}
+            onChange={handleDescriptionChange}
+          />
         )}
       </div>
 

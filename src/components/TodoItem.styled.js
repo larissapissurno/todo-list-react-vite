@@ -42,3 +42,14 @@ export const CheckboxInput = styled.input`
 export const Description = styled.span`
   text-decoration: ${(props) => (props.isCompleted ? "line-through" : "none")};
 `;
+
+export const TextInput = styled.input`
+  width: 100%;
+  height: 38px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #333;
+
+  outline: none; // remove o contorno ao clicar no input
+`;
