@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TodoItemStyled = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,10 +29,12 @@ export const TodoItemStyled = styled.div`
   }
 `;
 
-export const CheckboxStyled = styled.input`
+export const CheckboxInput = styled.input`
   width: 1.5rem;
   height: 1.5rem;
 
   margin-top: 0.5rem;
   margin-right: 1rem;
+
+  cursor: pointer;
 `;
