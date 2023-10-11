@@ -5,23 +5,8 @@ import "./App.css";
 import { TodoItem } from "./components/TodoItem";
 import { AddTodoInput } from "./components/AddTodoInput";
 
-const FAKE_DATA = [
-  {
-    description: "Learn React",
-    isCompleted: false,
-  },
-  {
-    description: "Learn Vite",
-    isCompleted: false,
-  },
-  {
-    description: "Learn Tailwind",
-    isCompleted: false,
-  },
-];
-
 function App() {
-  const [todos, setTodos] = useState(FAKE_DATA);
+  const [todos, setTodos] = useState([]);
 
   return (
     <>
