@@ -5,6 +5,7 @@ import "./App.css";
 import { TodoItem } from "./components/TodoItem";
 import { AddTodoInput } from "./components/AddTodoInput";
 import { Filter } from "./components/Filter";
+import { Header } from "./App.styled";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -62,9 +63,12 @@ function App() {
 
   return (
     <>
-      <h1>Todo List</h1>
+      <Header>
+        <h1>Todo List</h1>
 
-      <Filter onFilterChange={handleFilter} />
+        <Filter onFilterChange={handleFilter} />
+      </Header>
+
       <AddTodoInput onAddItem={handleAddNewTodoItem} />
 
       {todoList.map((todo) => (

@@ -16,8 +16,6 @@ export const Container = styled.div`
   background-color: #f1f1f1;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
 `;
 
 export const TextInput = styled.input`
